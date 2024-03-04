@@ -5,8 +5,8 @@ import {Menu} from "../../../components/menu/Menu";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./work/Work";
 
-import socialImg from "../../../assets/images/proj-1.png"
-import timerImg from "../../../assets/images/proj-2.png"
+import socialImg from "../../../assets/images/proj-1.webp"
+import timerImg from "../../../assets/images/proj-2.webp"
 
 const worksItems = ["All", "landing page", "React", "spa"]
 
