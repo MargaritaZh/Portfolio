@@ -38,7 +38,6 @@ const StyledHeaderMenu = styled.nav`
     }
 `
 
-
 const Link=styled.a`
     //color: rgb(117, 114, 213);
     color: transparent;
