@@ -7,6 +7,10 @@ export const theme = {
         placeholderColor:"rgb(73, 80, 87)",
 
         font:"#FFFFFF",
+    },
+    media: {
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)",
     }
 }
 
