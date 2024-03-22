@@ -41,6 +41,10 @@ export const GlobalStyled = createGlobalStyle`
 
     section {
         padding: 100px 0;
+        
+        @media ${theme.media.mobile} {
+            padding: 80px 0;
+        }
     }
 
     section:nth-of-type(odd) {
@@ -52,7 +56,7 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     h3 {
-        font-family: "Josefin Sans",sans-serif;
+        font-family: "Josefin Sans", sans-serif;
         font-size: 16px;
         font-weight: 700;
         letter-spacing: 1px;
