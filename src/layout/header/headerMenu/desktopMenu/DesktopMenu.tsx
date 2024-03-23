@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
 import {Menu} from "../menu/Menu";
+import {S} from "../HeaderMenu_Styles"
 
 // type DesktopMenuPropsType={
 //     menuItems:Array<string>
@@ -8,18 +8,12 @@ import {Menu} from "../menu/Menu";
 
 export const DesktopMenu: React.FC< { menuItems: Array<string> }> = (props: { menuItems: Array<string> }) => {
     return (
-        <StyledDesktopMenu>
+        <S.DesktopMenu>
             <Menu menuItems={props.menuItems}/>
-        </StyledDesktopMenu>
+        </S.DesktopMenu>
     );
 };
 
-const StyledDesktopMenu = styled.nav`
-    ul {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-`
+
 
 
