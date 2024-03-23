@@ -4,18 +4,26 @@ import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {DesktopMenu} from "./desktopMenu/DesktopMenu";
 import {MobileMenu} from "./mobileMenu/MobileMenu";
-import {S} from  "./Header_Styles"
+import {S} from "./Header_Styles"
 
-const items=["Home","Skills","Works","Testimony","Contact"]
+const items = ["Home", "Skills", "Works", "Testimony", "Contact"]
 
-export const Header:React.FC = () => {
+export const Header: React.FC = () => {
+
+        const [width, setWidth] = React.useState(window.innerWidth);
+        const breakpoint = 768;
+
+        React.useEffect(() => {
+            window.addEventListener("resize", () => setWidth(window.innerWidth));
+        }, []);
+
     return (
         <S.Header>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
-                    <DesktopMenu menuItems={items}/>
-                    <MobileMenu menuItems={items}/>
+                    {width < breakpoint ? <MobileMenu menuItems={items}/>
+                                        : <DesktopMenu menuItems={items}/>}
                 </FlexWrapper>
             </Container>
         </S.Header>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import {theme} from "../../../styles/Theme";
 import {Menu} from "../menu/Menu";
 
 // type DesktopMenuPropsType={
@@ -20,10 +19,6 @@ const StyledDesktopMenu = styled.nav`
         display: flex;
         gap: 30px;
         justify-content: center;
-    }
-
-    @media ${theme.media.tablet} {
-        display: none;
     }
 `
 
