@@ -8,7 +8,7 @@ import {Container} from "../../../components/Container";
 import {S} from "../skills/Skills_Styled"
 
 
-export const Testimony = () => {
+export const Testimony:React.FC = () => {
     return (
         <StyledTestimony>
             <Container>
