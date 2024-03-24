@@ -5,7 +5,7 @@ import {Skill} from "./skill/Skill";
 import {Container} from "../../../components/Container";
 import {S} from "./Skills_Styled"
 
-const SkillData = [
+const skillData = [
     {
         iconId: "code",
         title: "html5",
@@ -39,13 +39,13 @@ const SkillData = [
 ]
 
 
-export const Skills = () => {
+export const Skills:React.FC = () => {
     return (
         <S.Skills>
             <Container>
                 <SectionTitle>My Skills</SectionTitle>
                 <FlexWrapper wrap={"wrap"} justify={"space-between"}>
-                    {SkillData.map((s, index) => {
+                    {skillData.map((s, index) => {
                         return <Skill iconId={s.iconId} key={index}
                                       title={s.title}
                                       description={s.description}/>
