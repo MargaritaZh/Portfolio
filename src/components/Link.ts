@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {theme} from "../styles/Theme";
 
-export const Link=styled.a`
+export const Link = styled.a<{ active?: boolean }>`
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -10,23 +10,27 @@ export const Link=styled.a`
 
     position: relative;
     z-index: 0;
-    
-    &:hover{
-        &::before{
+
+    &:hover {
+        &::before {
             height: 10px;
         }
     }
-    
-    &::before{
+
+    &::before {
         content: "";
         display: inline-block;
         background-color: ${theme.colors.accent};
         //height: 10px;
-        
+
         position: absolute;
         bottom: 5px;
         right: 0;
         left: 0;
         z-index: -1;
+
+        ${props => props.active && css<{ active?: boolean }>`
+            height: 10px;
+        `}
     }
 `
