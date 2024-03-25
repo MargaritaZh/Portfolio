@@ -8,33 +8,55 @@ import timerImg from "../../../assets/images/proj-2.webp"
 import {Container} from "../../../components/Container";
 import {S} from "./Works_Styles"
 
-const worksItems = ["All", "landing page", "React", "spa"]
+// const tabsItems = ["All", "landing page", "React", "spa"]
 
-const worksData=[
+const tabsItems: Array<{ status: "all" | "landing" | "react" | "spa", title: string }> = [
     {
-        title:"Social Network",
-        src:socialImg,
-        text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.",
+        title: "All",
+        status: "all",
     },
     {
-        title:"Timer",
-        src:timerImg,
-        text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim."
+        title: "landing page",
+        status: "landing",
+    },
+    {
+        title: "React",
+        status: "react",
+    },
+    {
+        title: "spa",
+        status: "spa",
+    },
+
+
+]
+const worksData = [
+    {
+        title: "Social Network",
+        src: socialImg,
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.",
+        type: "spa",
+    },
+    {
+        title: "Timer",
+        src: timerImg,
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim.",
+        type: "react",
     },
 ]
 
-export const Works:React.FC = () => {
+export const Works: React.FC = () => {
     return (
         <S.Works>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
-                <TabMenu menuItems={worksItems}/>
+                <TabMenu tabsItems={tabsItems}/>
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={"wrap"}>
-                    {worksData.map((w, index)=>{
+                    {worksData.map((w, index) => {
                         return <Work key={index}
-                            title={w.title}
-                            src={w.src}
-                            text={w.text}/>
+                                     title={w.title}
+                                     src={w.src}
+                                     text={w.text}/>
                     })}
                 </FlexWrapper>
             </Container>

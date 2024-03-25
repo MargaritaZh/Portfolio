@@ -3,17 +3,19 @@ import styled from "styled-components";
 import {Link} from "../../../../components/Link";
 
 // type TabMenuPropsType={
-//     menuItems:Array<string>
+//     tabsItems: Array<{title:string}>
 // }
 
-export const TabMenu = (props: { menuItems: Array<string> }) => {
+export const TabMenu = (props: {
+    tabsItems: Array<{ status: "all" | "landing" | "react" | "spa", title: string }>
+}) => {
     return (
         <StyledTabMenu>
             <ul>
-                {props.menuItems.map((item, index) => {
+                {props.tabsItems.map((item, index) => {
                     return (
                         <ListItem key={index}>
-                            <Link href="">{item}</Link>
+                            <Link href="">{item.title}</Link>
                         </ListItem>
                     )
                 })}
@@ -23,7 +25,7 @@ export const TabMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledTabMenu = styled.nav`
-    
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -34,6 +36,6 @@ const StyledTabMenu = styled.nav`
     }
 `
 
-const ListItem=styled.li`
-    
+const ListItem = styled.li`
+
 `
