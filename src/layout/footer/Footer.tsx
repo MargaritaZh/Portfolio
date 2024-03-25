@@ -17,7 +17,7 @@ const socialIconData = [
         iconId: "linkedin",
     },
 ]
-export const Footer = () => {
+export const Footer:React.FC = () => {
     return (
         <S.Footer>
             <FlexWrapper direction={"column"} align={"center"}>
