@@ -1,18 +1,15 @@
 import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
 
 
 
 // Menu
 
-const NavLink=styled.a`
-    //color: rgb(117, 114, 213);
-    color: transparent;
-    font-family: "Josefin Sans",sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
+const MenuItem=styled.li`
+    position: relative;
 `
+
 const  Mask=styled.span`
     position: absolute;
     top: 0;
@@ -32,29 +29,34 @@ const  Mask=styled.span`
     }
 `
 
-const MenuItem=styled.li`
-    position: relative;
+const NavLink=styled(Link)`
+    //color: rgb(117, 114, 213);
+    color: transparent;
+    font-family: "Josefin Sans",sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
 
     &::before {
         content: "";
         display: inline-block;
         height: 3px;
         background-color: ${theme.colors.accent};
-       
+
         position: absolute;
         top: 50%;
         left: -10px;
         right: -10px;
         z-index: 1;
-        
+
         transform: scale(0);
     }
 
-    &:hover {
+    &:hover, &.active {
         &::before{
             transform: scale(1);
         }
-        
+
         ${Mask} {
             transform: skewX(12deg) translateX(5px);
             color: ${theme.colors.font};
