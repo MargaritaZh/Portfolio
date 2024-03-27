@@ -2,9 +2,10 @@ import {theme} from "../../../styles/Theme";
 import styled, {css} from "styled-components";
 
 
+
 // Menu
 
-const Link=styled.a`
+const NavLink=styled.a`
     //color: rgb(117, 114, 213);
     color: transparent;
     font-family: "Josefin Sans",sans-serif;
@@ -160,7 +161,7 @@ const DesktopMenu = styled.nav`
 
 
 export const S={
-    Link,
+    NavLink,
     Mask,
     MenuItem,
     MobileMenu,
