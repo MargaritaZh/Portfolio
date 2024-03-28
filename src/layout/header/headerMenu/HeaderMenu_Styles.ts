@@ -16,10 +16,10 @@ const  Mask=styled.span`
     left: 0;
     display: inline-block;
     height: 50%;
-    overflow: hidden;
+    overflow-y: hidden;
     //outline: 1px solid red;
     color: ${theme.colors.accent};
-
+    transition: ${theme.animation.transition};
     & + & {
         top: 50%;
         span{
@@ -50,6 +50,7 @@ const NavLink=styled(Link)`
         z-index: 1;
 
         transform: scale(0);
+        transition:${theme.animation.transition} ;
     }
 
     &:hover, &.active {
@@ -89,6 +90,7 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
         justify-content: center;
         align-items: center;
     `}
+    
     ul {
         display: flex;
         gap: 30px;

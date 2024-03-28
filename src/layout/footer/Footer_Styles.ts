@@ -21,7 +21,8 @@ const SocialList = styled.ul`
     margin: 30px 0 30px;
 `
 
-const SocialIcon = styled.li``
+const SocialIcon = styled.li`
+`
 
 const SocialLink = styled.a`
     height: 35px;
@@ -34,6 +35,7 @@ const SocialLink = styled.a`
     align-items: center;
 
     color: ${theme.colors.accent};
+    transition: ${theme.animation.transition};
 
     &:hover {
         color: ${theme.colors.primaryBg};
