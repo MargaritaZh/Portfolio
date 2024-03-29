@@ -3,14 +3,13 @@ import styled, {css} from "styled-components";
 import {Link} from "react-scroll";
 
 
-
 // Menu
 
-const MenuItem=styled.li`
+const MenuItem = styled.li`
     position: relative;
 `
 
-const  Mask=styled.span`
+const Mask = styled.span`
     position: absolute;
     top: 0;
     left: 0;
@@ -20,19 +19,21 @@ const  Mask=styled.span`
     //outline: 1px solid red;
     color: ${theme.colors.accent};
     transition: ${theme.animation.transition};
+
     & + & {
         top: 50%;
-        span{
+
+        span {
             display: inline-block;
             transform: translateY(-50%);
         }
     }
 `
 
-const NavLink=styled(Link)`
+const NavLink = styled(Link)`
     //color: rgb(117, 114, 213);
     color: transparent;
-    font-family: "Josefin Sans",sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 30px;
     font-weight: 400;
     text-align: center;
@@ -50,11 +51,11 @@ const NavLink=styled(Link)`
         z-index: 1;
 
         transform: scale(0);
-        transition:${theme.animation.transition} ;
+        transition: ${theme.animation.transition};
     }
 
     &:hover, &.active {
-        &::before{
+        &::before {
             transform: scale(1);
         }
 
@@ -83,21 +84,28 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     z-index: 99999;
     background-color: rgba(31, 31, 32, 0.9);
 
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
 
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
-    
     ul {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        transition: 1s ease-in-out;
     }
+
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+
+        & ul {
+            gap: 40px;
+        }
+    `}
 `
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -164,7 +172,7 @@ const DesktopMenu = styled.nav`
 `
 
 
-export const S={
+export const S = {
     NavLink,
     Mask,
     MenuItem,
