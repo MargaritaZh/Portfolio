@@ -9,6 +9,7 @@ import {Container} from "../../../components/Container";
 import {S} from "./Works_Styles"
 
 
+
 const tabsItems: Array<{ status: TabsStatusType, title: string }> = [
     {
         title: "All",
@@ -69,14 +70,19 @@ export const Works: React.FC = () => {
         <S.Works id={"works"}>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
-                <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}/>
+                <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus}
+                         currentFilterStatus={currentFilterStatus}/>
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={"wrap"}>
-                    {filteredWorks.map((w, index) => {
-                        return <Work key={index}
-                                     title={w.title}
-                                     src={w.src}
-                                     text={w.text}/>
-                    })}
+
+
+                        {filteredWorks.map((w, index) => {
+                            return <Work key={index}
+                                         title={w.title}
+                                         src={w.src}
+                                         text={w.text}/>
+                        })}
+
+
                 </FlexWrapper>
             </Container>
         </S.Works>
