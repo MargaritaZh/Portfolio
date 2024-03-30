@@ -25,14 +25,14 @@ const PhotoWrapper = styled.div`
         z-index: -1;
 
         @media ${theme.media.mobile} {
-            width: 314px;
-            height: 414px;
+            width: 295px;
+            height: 390px;
             top: -17px;
-            left: 20px;
+            left: 15px;
         }
     }
 
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tablet} {
         margin-top: 65px;
     }
 `
@@ -43,8 +43,8 @@ const Photo = styled.img`
     margin-right: 20px;
 
     @media ${theme.media.mobile} {
-        width: 310px;
-        height: 380px ;
+        width: 285px;
+        height: 365px ;
     }
 
 `
@@ -90,6 +90,11 @@ const MainTitle = styled.h1`
 const SmallText = styled.span`
     font-size: 14px;
     font-weight: 400;
+
+    @media ${theme.media.mobile} {
+        display: inline-block;
+        margin-top: 25px;
+    }
 `
 export const S={
     Main,
